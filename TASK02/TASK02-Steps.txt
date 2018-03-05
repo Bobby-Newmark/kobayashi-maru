@@ -1,0 +1,135 @@
+TASK02 change banner
+-----------------------------------------
+
+HOST: Ubuntu
+
+Assumption: using Vagrant config from TASK01
+
+
+
+
+001] sudo apt-get update
+
+
+002] sudo apt-get install software-properties-common
+
+
+003] sudo apt-add-repository ppa:ansible/ansible
+
+
+004] sudo apt-get update
+
+
+005] sudo apt-get install ansible
+
+
+006] mkdir ansible
+
+
+007] cd ansible
+
+
+008] create ansible playbook
+     (SEE FILE: ansible/set.node.banner_message.yml)
+
+
+009] create a jinga2 template file
+     (SEE FILE: ansible/banner.j2)
+
+
+010] check ssh keys are set for vagrant VMs
+
+     vagrant ssh-config | grep IdentityFile
+
+     [RESULT]
+	IdentityFile "/home/user/Desktop/kobayashi-maru/TASK02/.vagrant/machines/master/virtualbox/private_key"
+	IdentityFile "/home/user/Desktop/kobayashi-maru/TASK02/.vagrant/machines/node-1.vagrant/virtualbox/private_key"
+	IdentityFile "/home/user/Desktop/kobayashi-maru/TASK02/.vagrant/machines/node-2.vagrant/virtualbox/private_key"
+	IdentityFile "/home/user/Desktop/kobayashi-maru/TASK02/.vagrant/machines/node-3.vagrant/virtualbox/private_key"
+
+
+011] edit ansible hosts
+
+     sudo vi /etc/ansible/hosts
+
+     [add the text]
+
+[vagrant_nodes]
+192.168.50.10 ansible_connection=ssh ansible_ssh_port=22 ansible_ssh_user=vagrant ansible_ssh_private_key_file=~/Desktop/kobayashi-maru/TASK02/.vagrant/machines/node-1.vagrant/virtualbox/private_key
+192.168.50.11 ansible_connection=ssh ansible_ssh_port=22 ansible_ssh_user=vagrant ansible_ssh_private_key_file=~/Desktop/kobayashi-maru/TASK02/.vagrant/machines/node-2.vagrant/virtualbox/private_key
+192.168.50.12 ansible_connection=ssh ansible_ssh_port=22 ansible_ssh_user=vagrant ansible_ssh_private_key_file=~/Desktop/kobayashi-maru/TASK02/.vagrant/machines/node-3.vagrant/virtualbox/private_key
+
+
+012] execute ansible script
+
+     ansible$ ansible-playbook set.node.banner_message.yml
+
+
+013] check banner is displayed on node1
+
+     ssh vagrant@192.168.50.10 -i ~/Desktop/kobayashi-maru/TASK02/.vagrant/machines/node-1.vagrant/virtualbox/private_key
+    [RESULT]
+
+	===========================================================================
+		     Welcome to the Artificial Intelligence network
+	Unauthorised access is strictly prohibited. Trespassers will be prosecuted.
+	===========================================================================
+
+
+Last login: Sun Mar  4 16:37:56 2018 from 192.168.50.1
+
+
+
+
+
+
+014] check banner is displayed on node2
+
+     ssh vagrant@192.168.50.11 -i ~/Desktop/kobayashi-maru/TASK02/.vagrant/machines/node-2.vagrant/virtualbox/private_key
+     [RESULT]
+
+	===========================================================================
+		     Welcome to the Artificial Intelligence network
+	Unauthorised access is strictly prohibited. Trespassers will be prosecuted.
+	===========================================================================
+
+
+	Last login: Sun Mar  4 16:37:56 2018 from 192.168.50.1
+
+
+
+
+
+015] check banner is displayed on node3
+
+     ssh vagrant@192.168.50.12 -i ~/Desktop/kobayashi-maru/TASK02/.vagrant/machines/node-3.vagrant/virtualbox/private_key
+
+     [RESULT]
+
+	===========================================================================
+		     Welcome to the Artificial Intelligence network
+	Unauthorised access is strictly prohibited. Trespassers will be prosecuted.
+	===========================================================================
+
+
+Last login: Sun Mar  4 16:37:56 2018 from 192.168.50.1
+
+
+016] checked with localhost and vagrant assigned port forwarding (the same as step 013 but using the port instead of specifying the IP addr)
+
+     ssh vagrant@localhost -p2200 -i ~/Desktop/kobayashi-maru/TASK02/.vagrant/machines/node-1.vagrant/virtualbox/private_key
+
+     [RESULT]
+	The authenticity of host '[localhost]:2200 ([127.0.0.1]:2200)' can't be established.
+	ECDSA key fingerprint is SHA256:lMmlZ+/3READds+oKGg544+dyOJtr7OXm+oBXpvbZ9c.
+	Are you sure you want to continue connecting (yes/no)? yes
+	Warning: Permanently added '[localhost]:2200' (ECDSA) to the list of known hosts.
+
+
+	===========================================================================
+		     Welcome to the Artificial Intelligence network
+	Unauthorised access is strictly prohibited. Trespassers will be prosecuted.
+	===========================================================================
+
+
+

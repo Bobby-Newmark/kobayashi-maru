@@ -1,0 +1,316 @@
+TASK01 Build 3 CentOS / VMs using Vagrant
+-----------------------------------------
+
+HOST: Ubuntu
+
+
+
+001] sudo apt-get update
+
+
+002] sudo apt-get install vagrant
+
+
+003] validate install by checking version:
+     vagrant -v
+
+     [RESULT]
+        Vagrant 1.8.1
+
+
+004] sudo apt-get install virtualbox
+
+
+005] validate install by checking version:
+     vboxmanage -v
+
+     [RESULT]
+        5.0.40_Ubuntur115130
+
+
+006] create directory for project
+     mkdir kobayashi-maru
+
+
+007] change to project directory
+     cd kobayashi-maru
+
+008] make task directory
+     mkdir TASK01
+
+
+009] create VagrantFile
+     (see TASK1/Vagrantfile)
+
+
+010] vagrant up
+
+     [RESULT]
+	Bringing machine 'master' up with 'virtualbox' provider...
+	Bringing machine 'node-1.vagrant' up with 'virtualbox' provider...
+	Bringing machine 'node-2.vagrant' up with 'virtualbox' provider...
+	Bringing machine 'node-3.vagrant' up with 'virtualbox' provider...
+	==> master: Checking if box 'centos/7' is up to date...
+	==> master: VirtualBox VM is already running.
+	==> node-1.vagrant: Importing base box 'centos/7'...
+	==> node-1.vagrant: Matching MAC address for NAT networking...
+	==> node-1.vagrant: Checking if box 'centos/7' is up to date...
+	==> node-1.vagrant: Setting the name of the VM: TASK01_node-1vagrant_1520167430647_91068
+	==> node-1.vagrant: Fixed port collision for 22 => 2222. Now on port 2201.
+	==> node-1.vagrant: Clearing any previously set network interfaces...
+	==> node-1.vagrant: Preparing network interfaces based on configuration...
+	    node-1.vagrant: Adapter 1: nat
+	    node-1.vagrant: Adapter 2: hostonly
+	==> node-1.vagrant: Forwarding ports...
+	    node-1.vagrant: 22 (guest) => 2201 (host) (adapter 1)
+	==> node-1.vagrant: Booting VM...
+	==> node-1.vagrant: Waiting for machine to boot. This may take a few minutes...
+	    node-1.vagrant: SSH address: 127.0.0.1:2201
+	    node-1.vagrant: SSH username: vagrant
+	    node-1.vagrant: SSH auth method: private key
+	    node-1.vagrant: 
+	    node-1.vagrant: Vagrant insecure key detected. Vagrant will automatically replace
+	    node-1.vagrant: this with a newly generated keypair for better security.
+	    node-1.vagrant: 
+	    node-1.vagrant: Inserting generated public key within guest...
+	    node-1.vagrant: Removing insecure key from the guest if it's present...
+	    node-1.vagrant: Key inserted! Disconnecting and reconnecting using new SSH key...
+	==> node-1.vagrant: Machine booted and ready!
+	==> node-1.vagrant: Checking for guest additions in VM...
+	    node-1.vagrant: No guest additions were detected on the base box for this VM! Guest
+	    node-1.vagrant: additions are required for forwarded ports, shared folders, host only
+	    node-1.vagrant: networking, and more. If SSH fails on this machine, please install
+	    node-1.vagrant: the guest additions and repackage the box to continue.
+	    node-1.vagrant: 
+	    node-1.vagrant: This is not an error message; everything may continue to work properly,
+	    node-1.vagrant: in which case you may ignore this message.
+	==> node-1.vagrant: Configuring and enabling network interfaces...
+	==> node-1.vagrant: Rsyncing folder: /home/user/Desktop/kobayashi-maru/TASK01/ => /vagrant
+	==> node-2.vagrant: Importing base box 'centos/7'...
+	==> node-2.vagrant: Matching MAC address for NAT networking...
+	==> node-2.vagrant: Checking if box 'centos/7' is up to date...
+	==> node-2.vagrant: Setting the name of the VM: TASK01_node-2vagrant_1520167473518_90333
+	==> node-2.vagrant: Fixed port collision for 22 => 2222. Now on port 2202.
+	==> node-2.vagrant: Clearing any previously set network interfaces...
+	==> node-2.vagrant: Preparing network interfaces based on configuration...
+	    node-2.vagrant: Adapter 1: nat
+	    node-2.vagrant: Adapter 2: hostonly
+	==> node-2.vagrant: Forwarding ports...
+	    node-2.vagrant: 22 (guest) => 2202 (host) (adapter 1)
+	==> node-2.vagrant: Booting VM...
+	==> node-2.vagrant: Waiting for machine to boot. This may take a few minutes...
+	    node-2.vagrant: SSH address: 127.0.0.1:2202
+	    node-2.vagrant: SSH username: vagrant
+	    node-2.vagrant: SSH auth method: private key
+	    node-2.vagrant: 
+	    node-2.vagrant: Vagrant insecure key detected. Vagrant will automatically replace
+	    node-2.vagrant: this with a newly generated keypair for better security.
+	    node-2.vagrant: 
+	    node-2.vagrant: Inserting generated public key within guest...
+	    node-2.vagrant: Removing insecure key from the guest if it's present...
+	    node-2.vagrant: Key inserted! Disconnecting and reconnecting using new SSH key...
+	==> node-2.vagrant: Machine booted and ready!
+	==> node-2.vagrant: Checking for guest additions in VM...
+	    node-2.vagrant: No guest additions were detected on the base box for this VM! Guest
+	    node-2.vagrant: additions are required for forwarded ports, shared folders, host only
+	    node-2.vagrant: networking, and more. If SSH fails on this machine, please install
+	    node-2.vagrant: the guest additions and repackage the box to continue.
+	    node-2.vagrant: 
+	    node-2.vagrant: This is not an error message; everything may continue to work properly,
+	    node-2.vagrant: in which case you may ignore this message.
+	==> node-2.vagrant: Configuring and enabling network interfaces...
+	==> node-2.vagrant: Rsyncing folder: /home/user/Desktop/kobayashi-maru/TASK01/ => /vagrant
+	==> node-3.vagrant: Importing base box 'centos/7'...
+	==> node-3.vagrant: Matching MAC address for NAT networking...
+	==> node-3.vagrant: Checking if box 'centos/7' is up to date...
+	==> node-3.vagrant: Setting the name of the VM: TASK01_node-3vagrant_1520167516404_32727
+	==> node-3.vagrant: Fixed port collision for 22 => 2222. Now on port 2203.
+	==> node-3.vagrant: Clearing any previously set network interfaces...
+	==> node-3.vagrant: Preparing network interfaces based on configuration...
+	    node-3.vagrant: Adapter 1: nat
+	    node-3.vagrant: Adapter 2: hostonly
+	==> node-3.vagrant: Forwarding ports...
+	    node-3.vagrant: 22 (guest) => 2203 (host) (adapter 1)
+	==> node-3.vagrant: Booting VM...
+	==> node-3.vagrant: Waiting for machine to boot. This may take a few minutes...
+	    node-3.vagrant: SSH address: 127.0.0.1:2203
+	    node-3.vagrant: SSH username: vagrant
+	    node-3.vagrant: SSH auth method: private key
+	    node-3.vagrant: 
+	    node-3.vagrant: Vagrant insecure key detected. Vagrant will automatically replace
+	    node-3.vagrant: this with a newly generated keypair for better security.
+	    node-3.vagrant: 
+	    node-3.vagrant: Inserting generated public key within guest...
+	    node-3.vagrant: Removing insecure key from the guest if it's present...
+	    node-3.vagrant: Key inserted! Disconnecting and reconnecting using new SSH key...
+	==> node-3.vagrant: Machine booted and ready!
+	==> node-3.vagrant: Checking for guest additions in VM...
+	    node-3.vagrant: No guest additions were detected on the base box for this VM! Guest
+	    node-3.vagrant: additions are required for forwarded ports, shared folders, host only
+	    node-3.vagrant: networking, and more. If SSH fails on this machine, please install
+	    node-3.vagrant: the guest additions and repackage the box to continue.
+	    node-3.vagrant: 
+	    node-3.vagrant: This is not an error message; everything may continue to work properly,
+	    node-3.vagrant: in which case you may ignore this message.
+	==> node-3.vagrant: Configuring and enabling network interfaces...
+	==> node-3.vagrant: Rsyncing folder: /home/user/Desktop/kobayashi-maru/TASK01/ => /vagrant
+
+
+011] check VM 1 status
+     vagrant status node-1.vagrant
+
+     [RESULT]
+	Current machine states:
+
+	node-1.vagrant            running (virtualbox)
+
+	The VM is running. To stop this VM, you can run `vagrant halt` to
+	shut it down forcefully, or you can run `vagrant suspend` to simply
+	suspend the virtual machine. In either case, to restart it again,
+	simply run `vagrant up`.
+
+
+012] check VM 2 status
+     vagrant status node-2.vagrant
+
+     [RESULT]
+	Current machine states:
+
+	node-1.vagrant            running (virtualbox)
+
+	The VM is running. To stop this VM, you can run `vagrant halt` to
+	shut it down forcefully, or you can run `vagrant suspend` to simply
+	suspend the virtual machine. In either case, to restart it again,
+	simply run `vagrant up`.
+
+
+013] check VM 3 status
+     vagrant status node-3.vagrant
+
+     [RESULT]
+	Current machine states:
+
+	node-1.vagrant            running (virtualbox)
+
+	The VM is running. To stop this VM, you can run `vagrant halt` to
+	shut it down forcefully, or you can run `vagrant suspend` to simply
+	suspend the virtual machine. In either case, to restart it again,
+	simply run `vagrant up`.
+
+
+014] connect to VM 1
+     vagrant ssh node-1.vagrant
+
+
+015] check distro
+
+     cat /etc/*elease
+
+     [RESULT]
+	CentOS Linux release 7.4.1708 (Core) 
+	NAME="CentOS Linux"
+	VERSION="7 (Core)"
+	ID="centos"
+	ID_LIKE="rhel fedora"
+	VERSION_ID="7"
+	PRETTY_NAME="CentOS Linux 7 (Core)"
+	ANSI_COLOR="0;31"
+	CPE_NAME="cpe:/o:centos:centos:7"
+	HOME_URL="https://www.centos.org/"
+	BUG_REPORT_URL="https://bugs.centos.org/"
+
+	CENTOS_MANTISBT_PROJECT="CentOS-7"
+	CENTOS_MANTISBT_PROJECT_VERSION="7"
+	REDHAT_SUPPORT_PRODUCT="centos"
+	REDHAT_SUPPORT_PRODUCT_VERSION="7"
+
+	CentOS Linux release 7.4.1708 (Core) 
+	CentOS Linux release 7.4.1708 (Core) 
+
+
+016] exit
+
+
+017] connect to VM 2
+     vagrant ssh node-2.vagrant
+
+
+018] check distro
+
+     cat /etc/*elease
+
+     [RESULT]
+	CentOS Linux release 7.4.1708 (Core) 
+	NAME="CentOS Linux"
+	VERSION="7 (Core)"
+	ID="centos"
+	ID_LIKE="rhel fedora"
+	VERSION_ID="7"
+	PRETTY_NAME="CentOS Linux 7 (Core)"
+	ANSI_COLOR="0;31"
+	CPE_NAME="cpe:/o:centos:centos:7"
+	HOME_URL="https://www.centos.org/"
+	BUG_REPORT_URL="https://bugs.centos.org/"
+
+	CENTOS_MANTISBT_PROJECT="CentOS-7"
+	CENTOS_MANTISBT_PROJECT_VERSION="7"
+	REDHAT_SUPPORT_PRODUCT="centos"
+	REDHAT_SUPPORT_PRODUCT_VERSION="7"
+
+	CentOS Linux release 7.4.1708 (Core) 
+	CentOS Linux release 7.4.1708 (Core) 
+
+
+019] exit
+
+
+020] connect to VM 3
+     vagrant ssh node-3.vagrant
+
+
+021] check distro
+
+     cat /etc/*elease
+
+     [RESULT]
+	CentOS Linux release 7.4.1708 (Core) 
+	NAME="CentOS Linux"
+	VERSION="7 (Core)"
+	ID="centos"
+	ID_LIKE="rhel fedora"
+	VERSION_ID="7"
+	PRETTY_NAME="CentOS Linux 7 (Core)"
+	ANSI_COLOR="0;31"
+	CPE_NAME="cpe:/o:centos:centos:7"
+	HOME_URL="https://www.centos.org/"
+	BUG_REPORT_URL="https://bugs.centos.org/"
+
+	CENTOS_MANTISBT_PROJECT="CentOS-7"
+	CENTOS_MANTISBT_PROJECT_VERSION="7"
+	REDHAT_SUPPORT_PRODUCT="centos"
+	REDHAT_SUPPORT_PRODUCT_VERSION="7"
+
+	CentOS Linux release 7.4.1708 (Core) 
+	CentOS Linux release 7.4.1708 (Core) 
+
+
+022] exit
+
+
+023] stop VM 1
+     vagrant halt node-1.vagrant
+
+     [RESULT]
+	==> node-1.vagrant: Attempting graceful shutdown of VM...
+
+024] stop VM 2
+     vagrant halt node-2.vagrant
+
+     [RESULT]
+	==> node-2.vagrant: Attempting graceful shutdown of VM...
+
+025] stop VM 3
+     vagrant halt node-3.vagrant
+
+     [RESULT]
+	==> node-3.vagrant: Attempting graceful shutdown of VM...

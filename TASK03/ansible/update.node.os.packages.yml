@@ -1,0 +1,9 @@
+---
+- hosts: vagrant_nodes
+  gather_facts: no
+  tasks:
+    - name: update os packages
+      yum: 
+        name: '*'
+        state: latest
+      become: yes

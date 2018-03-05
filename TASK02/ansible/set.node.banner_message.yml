@@ -1,0 +1,31 @@
+---
+- hosts: vagrant_nodes
+  gather_facts: no
+  tasks:
+    - name: update banner setting
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '#Banner none'
+        line: 'Banner /etc/issue.net' 
+      become: yes
+
+    - name: delete previous banner file
+      file:
+        path: /etc/issue.net
+        state: absent
+      become: yes
+
+    - name: create new banner file from template
+      template:
+        src: banner.j2
+        dest: /etc/issue.net
+        group: root
+        owner: root
+        mode: 644
+      become: yes
+
+    - name: restart sshd
+      service:
+        name: network
+        state: restarted
+      become: yes
