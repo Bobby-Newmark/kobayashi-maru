@@ -3,40 +3,34 @@ TASK04 install consul on node1
 
 HOST: Ubuntu
 
-Assumption: using Vagrant config from TASK03
-            ansible installed as in TASK03
-            os packages are up-to-date
-            vms are running (vagrant reload node-1.vaagrant, etc...)
+Assumption: using items from TASK04 
 
 
 001] cd ansible
 
 
-002] create ansible playbook
-     (SEE FILE: ansible/install.consul.server.yml)
+002] create ansible playbook to instal and start consul on node-2
+     (SEE FILE: ansible/1nstall.consul.agent_1.yml)
 
 
-003] execute the playbook
-     ansible-playbook install.consul.server.yml
+003] create ansible playbook to instal and start consul on node-3
+     (SEE FILE: ansible/1nstall.consul.agent_2.yml)
 
-     [RESULT]
-	PLAY [192.168.50.10] ******************************************************************************************************************
 
-	TASK [install unzip] ******************************************************************************************************************
-	ok: [192.168.50.10]
+004] create a jinja2 template for the config
+     (SEE FILE: ansible/agent.json.j2)
 
-	TASK [get consul] *********************************************************************************************************************
-	changed: [192.168.50.10]
 
-	TASK [create target directory] ********************************************************************************************************
-	ok: [192.168.50.10]
+005] execute the 1st playbook
+     ansible-playbook 1nstall.consul.agent_1.yml
 
-	TASK [unarchive consul] ***************************************************************************************************************
-	ok: [192.168.50.10]
 
-	TASK [remove zipfile] *****************************************************************************************************************
-	changed: [192.168.50.10]
+006] execute the 2nd playbook
+     ansible-playbook 1nstall.consul.agent_2.yml
 
-	PLAY RECAP ****************************************************************************************************************************
-	192.168.50.10              : ok=5    changed=2    unreachable=0    failed=0   
+
+007] check ui at URL: 192.168.50.10/ui
+
+
+008] select the [NODES] tab. You should see all 3 nodes listed.
 
