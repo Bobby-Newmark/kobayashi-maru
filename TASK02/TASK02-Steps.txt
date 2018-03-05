@@ -42,10 +42,10 @@ Assumption: using Vagrant config from TASK01
      vagrant ssh-config | grep IdentityFile
 
      [RESULT]
-	IdentityFile "/home/user/Desktop/kobayashi-maru/TASK02/.vagrant/machines/master/virtualbox/private_key"
-	IdentityFile "/home/user/Desktop/kobayashi-maru/TASK02/.vagrant/machines/node-1.vagrant/virtualbox/private_key"
-	IdentityFile "/home/user/Desktop/kobayashi-maru/TASK02/.vagrant/machines/node-2.vagrant/virtualbox/private_key"
-	IdentityFile "/home/user/Desktop/kobayashi-maru/TASK02/.vagrant/machines/node-3.vagrant/virtualbox/private_key"
+	IdentityFile "/home/user/kobayashi-maru/TASK02/.vagrant/machines/master/virtualbox/private_key"
+	IdentityFile "/home/user/kobayashi-maru/TASK02/.vagrant/machines/node-1.vagrant/virtualbox/private_key"
+	IdentityFile "/home/user/kobayashi-maru/TASK02/.vagrant/machines/node-2.vagrant/virtualbox/private_key"
+	IdentityFile "/home/user/kobayashi-maru/TASK02/.vagrant/machines/node-3.vagrant/virtualbox/private_key"
 
 
 011] edit ansible hosts
@@ -55,9 +55,9 @@ Assumption: using Vagrant config from TASK01
      [add the text]
 
 [vagrant_nodes]
-192.168.50.10 ansible_connection=ssh ansible_ssh_port=22 ansible_ssh_user=vagrant ansible_ssh_private_key_file=~/Desktop/kobayashi-maru/TASK02/.vagrant/machines/node-1.vagrant/virtualbox/private_key
-192.168.50.11 ansible_connection=ssh ansible_ssh_port=22 ansible_ssh_user=vagrant ansible_ssh_private_key_file=~/Desktop/kobayashi-maru/TASK02/.vagrant/machines/node-2.vagrant/virtualbox/private_key
-192.168.50.12 ansible_connection=ssh ansible_ssh_port=22 ansible_ssh_user=vagrant ansible_ssh_private_key_file=~/Desktop/kobayashi-maru/TASK02/.vagrant/machines/node-3.vagrant/virtualbox/private_key
+192.168.50.10 ansible_connection=ssh ansible_ssh_port=22 ansible_ssh_user=vagrant ansible_ssh_private_key_file=~/kobayashi-maru/TASK02/.vagrant/machines/node-1.vagrant/virtualbox/private_key
+192.168.50.11 ansible_connection=ssh ansible_ssh_port=22 ansible_ssh_user=vagrant ansible_ssh_private_key_file=~/kobayashi-maru/TASK02/.vagrant/machines/node-2.vagrant/virtualbox/private_key
+192.168.50.12 ansible_connection=ssh ansible_ssh_port=22 ansible_ssh_user=vagrant ansible_ssh_private_key_file=~/kobayashi-maru/TASK02/.vagrant/machines/node-3.vagrant/virtualbox/private_key
 
 
 012] execute ansible script
@@ -67,7 +67,7 @@ Assumption: using Vagrant config from TASK01
 
 013] check banner is displayed on node1
 
-     ssh vagrant@192.168.50.10 -i ~/Desktop/kobayashi-maru/TASK02/.vagrant/machines/node-1.vagrant/virtualbox/private_key
+     ssh vagrant@192.168.50.10 -i ~/kobayashi-maru/TASK02/.vagrant/machines/node-1.vagrant/virtualbox/private_key
     [RESULT]
 
 	===========================================================================
@@ -85,7 +85,7 @@ Last login: Sun Mar  4 16:37:56 2018 from 192.168.50.1
 
 014] check banner is displayed on node2
 
-     ssh vagrant@192.168.50.11 -i ~/Desktop/kobayashi-maru/TASK02/.vagrant/machines/node-2.vagrant/virtualbox/private_key
+     ssh vagrant@192.168.50.11 -i ~/kobayashi-maru/TASK02/.vagrant/machines/node-2.vagrant/virtualbox/private_key
      [RESULT]
 
 	===========================================================================
@@ -102,7 +102,7 @@ Last login: Sun Mar  4 16:37:56 2018 from 192.168.50.1
 
 015] check banner is displayed on node3
 
-     ssh vagrant@192.168.50.12 -i ~/Desktop/kobayashi-maru/TASK02/.vagrant/machines/node-3.vagrant/virtualbox/private_key
+     ssh vagrant@192.168.50.12 -i ~/kobayashi-maru/TASK02/.vagrant/machines/node-3.vagrant/virtualbox/private_key
 
      [RESULT]
 
@@ -117,7 +117,7 @@ Last login: Sun Mar  4 16:37:56 2018 from 192.168.50.1
 
 016] checked with localhost and vagrant assigned port forwarding (the same as step 013 but using the port instead of specifying the IP addr)
 
-     ssh vagrant@localhost -p2200 -i ~/Desktop/kobayashi-maru/TASK02/.vagrant/machines/node-1.vagrant/virtualbox/private_key
+     ssh vagrant@localhost -p2200 -i ~/kobayashi-maru/TASK02/.vagrant/machines/node-1.vagrant/virtualbox/private_key
 
      [RESULT]
 	The authenticity of host '[localhost]:2200 ([127.0.0.1]:2200)' can't be established.

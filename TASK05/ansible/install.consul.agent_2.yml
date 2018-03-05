@@ -1,12 +1,9 @@
 ---
-- hosts: 192.168.50.10
+- hosts: 192.168.50.12
   gather_facts: no
   vars:
-    consul:
-      server:
-        bind_addr: 192.168.50.10
-        datacenter: "SCM-AI-TEAM"
-   
+    node_name: node-3.vagrant   
+    bind_addr: 192.168.50.12
   tasks:
     - name: install unzip
       yum:
@@ -57,9 +54,9 @@
         mode: 644
       become: yes
 
-    - name: deploy sever config file
+    - name: deploy agent config file
       template:
-        src: server.json.j2
+        src: agent.json.j2
         dest: /etc/consul.d/config.json
         group: root
         owner: root
@@ -67,10 +64,6 @@
       become: yes
 
     - name: start consul
-      command: "/opt/consul/consul agent -config-file /etc/consul.d/config.json -ui"
-      async: 45
-      poll: 0
+      shell: "nohup /opt/consul/consul agent -config-file /etc/consul.d/config.json -ui & "
       become: yes
-
-
 

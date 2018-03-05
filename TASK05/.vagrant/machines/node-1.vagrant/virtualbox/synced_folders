@@ -1,1 +1,1 @@
-{"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"/home/user/Desktop/kobayashi-maru/TASK04","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}
+{"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"/home/user/kobayashi-maru/TASK03","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}
