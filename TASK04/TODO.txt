@@ -1,0 +1,7 @@
+Instructions
+
+Consul (https://www.consul.io/) is used in our environment for service discovery. Using your configuration management framework of choice, install and configure node-1.vagrant as a Consul server. Use "service.consul" as the service discovery domain name.
+
+Ensure that the Consul web UI is installed. The web UI provides you with a
+dashboard of all the services registered with Consul.
+

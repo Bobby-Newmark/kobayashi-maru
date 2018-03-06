@@ -1,0 +1,12 @@
+Instructions
+•Using Vagrant (https://www.vagrantup.com/) and VirtualBox (https://www.virtualbox.org/), deploy 3 CentOS-7 Virtual Machines.
+•Setup a Class-C private network on the 192.168.50.0 subnet.
+•Use the following FQDNs and IP address for each node:
+•node-1.vagrant : 192.168.50.10
+•node-2.vagrant : 192.168.50.11
+•node-3.vagrant : 192.168.50.12
+
+Expectations
+
+Executing a vagrant up should result in all three virtual machines running, and reachable from your host (workstation).
+

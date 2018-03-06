@@ -1,0 +1,4 @@
+Instructions
+
+Our security policy requires that all nodes are kept up to date with security patches and have the latest OS packages deployed. Using your configuration management framework of choice, ensure that all OS packages on all nodes have been upgraded to the latest versions.
+

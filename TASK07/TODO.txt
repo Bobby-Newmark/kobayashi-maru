@@ -1,0 +1,6 @@
+Instructions
+
+Nomad (https://www.nomadproject.io/) is used in our environment for orchestrating and scheduling our Docker container-based services. Using your configuration management framework of choice, install and configure node-2.vagrant and node-3.vagrant as Nomad agents.
+
+Once the Nomad agents have been started and have registered with the Nomad server, they should appear in the Consul web UI and be discoverable with service discovery.
+

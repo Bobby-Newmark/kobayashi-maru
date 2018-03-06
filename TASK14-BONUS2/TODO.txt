@@ -1,0 +1,6 @@
+Instructions
+
+Well done!! You've come far!
+
+What security implications to you see with what we've done so far? What would you recommend to secure our microservice stack? If you have time, feel free to execute any of these ideas. Remember that the stack still need to work once you've implemented any additional security measures.
+

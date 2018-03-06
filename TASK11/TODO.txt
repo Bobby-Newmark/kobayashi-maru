@@ -1,0 +1,12 @@
+Instructions
+
+Let's flex those muscles! For this task you will need to build your own custom container running a basic Flask web application. Awesome!
+•Write a basic Flask (http://flask.pocoo.org/) web application that connects and uses the Redis instance that you deployed in the previous task.
+•The application can be super-basic, for example it can store an integer in Redis which is incremented and displayed each time the application is used.
+•Once your application is working, containerise it and publish it to the Docker Hub. This is required when deploying it to your microservice environment.
+•Create a Nomad job to deploy your application to the microservice environment.
+
+Links
+•http://flask.pocoo.org/snippets/73/
+•https://hub.docker.com/
+

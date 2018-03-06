@@ -1,0 +1,7 @@
+Instructions
+
+Our security policy requires that we add a disclaimer message when accessing a node via SSH. Using your configuration management framework of choice, set the message displayed to the following:
+
+"Welcome to the Artificial Intelligence network.
+Unauthorised access is strictly prohibited. Trespassers will be prosecuted"
+

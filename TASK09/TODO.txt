@@ -1,0 +1,4 @@
+Instructions
+
+Now that you have a fully working Nomad, Consul and Docker stack, deploy a test container with Nomad. Nomad can generate a test job for you. Once the container is deployed, can you see it registered in Consul? Can you connect to it's TCP port? 
+

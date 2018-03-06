@@ -1,0 +1,12 @@
+---
+- hosts: 192.168.50.11,192.168.50.12
+  gather_facts: no
+   
+  tasks:
+    - name: install unzip
+      yum:
+        name: 
+      become: yes
+
+
+

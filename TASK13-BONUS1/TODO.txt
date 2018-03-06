@@ -1,0 +1,6 @@
+Instructions
+--------------
+
+Well done! You've got a cool little application deployed as a microservice, excellent. Now let's make things more interesting. Do you think you can make your web application highly available? This means scaling up each microservice component so that there are 2 instances of each running.
+
+Your application still needs to function when either node-2.vagrant or node-3.vagrant is shutdown.

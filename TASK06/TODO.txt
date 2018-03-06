@@ -1,0 +1,8 @@
+Instructions
+
+Nomad (https://www.nomadproject.io/) is used in our environment for orchestrating and scheduling our Docker container-based services. Using your configuration management framework of choice, install and configure node-1.vagrant as a Nomad server.
+
+Nomad and Consul are tightly coupled, ensure that Nomad and Consul work with one another. When Nomad deploys a container, the container service should be registered with Consul.
+
+How can this be tested?
+

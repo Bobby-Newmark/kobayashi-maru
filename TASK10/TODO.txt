@@ -1,0 +1,4 @@
+Instructions
+
+Deploy a single instance of Redis into your microservice environment.
+

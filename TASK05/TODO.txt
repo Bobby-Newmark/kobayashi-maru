@@ -1,0 +1,8 @@
+Instructions
+
+Consul (https://www.consul.io/) is used in our environment for service discovery. Using your configuration management framework of choice, install and configure node-2.vagrant and node-3.vagrant as Consul agents.
+
+Consul service discovery provides a DNS service. How would you configure your nodes to use Consul for resolving your dynamic service names on the *.service.consul domain, and a public DNS server for all other lookups?
+
+Hint: dnsmasq
+

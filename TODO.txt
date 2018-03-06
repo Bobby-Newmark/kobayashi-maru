@@ -1,0 +1,44 @@
+Introduction
+--------------
+
+This Trello board will guide you through the different tasks we would like to see you complete. This a basic Kanban board that we use to track our tasks. Whenever you start working on a task, move it to **In Progress**. Once you finish, move it to **Done**.
+
+Assessment
+--------------
+
+We are not *only* looking for someone with experience, we are looking for someone who's motivated, able to learn and who likes to find creative solutions.  We we welcome thinking out of the box! This assessment is designed to challenge and provide an instructive and fun experience.
+
+Extra kudos if you add comments to tasks in Trello to keep track of your progress. For example any relevant changes, commands, research, web links etc. We like people that are able to learn and research, so even if you might not get the tasks completed, your notes about what you tried are really valuable.
+
+In General
+------------
+
+- Please try and complete the assessment within one week of receiving it.
+- Explain your solutions in two to three lines.
+- Create git repo to track and share your work. Please link commits relevant for each task completed. We recommend you create a Bitbucket account and a private git repository (there's no cost to you). Invite "jvdmswisscom" to your repository team.
+- Share your results even if you don't finish.
+- We understand there's more than one way to do things. If you're stuck, pick one and justify the choice.
+
+Assumptions
+---------------
+
+We avoid doing any manual work when setting up or deploying services. Please use a configuration management framework of your choosing to manage the OS, and when deploying and configuring software and services. Examples of these include Ansible, Puppet, Salt, Chef etc.
+
+Rules
+-------
+
+- Please keep this assessment to yourself, i.e. don't share it with you colleagues, friends and the rest of the world. :)
+- Keep the board private.
+- You and you alone are expected to be the unique author of the solutions for this assessment. You will be questioned on details of the solution you provide.
+
+The Task
+----------
+
+We would like you to deploy a small microservice using Docker containers. This includes using Nomad (https://www.nomadproject.io/) for container orchestration and scheduling, and Consul (https://www.consul.io/) for service discovery. This might sound a little daunting at first, but we promise that it's a fun little exercise. ^_^
+
+Each task is explained in more detail in the description of the task.
+
+Feedback
+------------
+
+Please feel free to provide any feedback you have about this the assessment or even propose any technical and not technical improvement!

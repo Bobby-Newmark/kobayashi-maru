@@ -1,0 +1,4 @@
+Instructions
+
+Using your configuration management framework, deploy docker-engine to node-2.vagrant and node-3.vagrant. The docker-engine packages are not part of the base CentOS-7 OS package repository.
+

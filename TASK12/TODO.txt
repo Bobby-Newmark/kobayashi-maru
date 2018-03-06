@@ -1,0 +1,6 @@
+Instructions
+
+Now that you have your application running, let's give it a proper Nginx front end proxy. Deploy an Nginx container which should be used to access your Flask web application.
+
+User --> Nginx --> Flask Web App
+
