@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  gather_facts: no
+
+- import_playbook: sub_start.agent.yml ip_addr=192.168.50.11
+- import_playbook: sub_start.agent.yml ip_addr=192.168.50.12
+
+
