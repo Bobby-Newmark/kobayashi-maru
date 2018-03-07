@@ -1,0 +1,15 @@
+---
+- hosts: 192.168.50.10
+  gather_facts: no
+   
+  tasks:
+    - name: kill existing running instances
+      shell: "ps x | grep nomad | grep -v grep | awk '{print \"kill -9 \"$1}' | sh"
+      become: yes
+
+    - name: start consul
+      shell: "nohup /opt/nomad agent -dev & "
+      become: yes
+
+
+

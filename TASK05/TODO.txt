@@ -5,4 +5,4 @@ Consul (https://www.consul.io/) is used in our environment for service discovery
 Consul service discovery provides a DNS service. How would you configure your nodes to use Consul for resolving your dynamic service names on the *.service.consul domain, and a public DNS server for all other lookups?
 
 Hint: dnsmasq
-
+https://www.consul.io/docs/guides/forwarding.html
